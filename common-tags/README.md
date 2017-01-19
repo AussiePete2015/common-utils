@@ -11,4 +11,4 @@
                          name
       --tag TAG          return the repository application name associated with
                          the tag
-      --db DB            database file to use (defaults to tagsDB in the current directory)
+      --db DB            database file to use (defaults to tagsDB in the same directory as this file)

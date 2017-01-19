@@ -22,7 +22,7 @@ def read_file (args):
     import sys
     
     """read file into in-memory hash"""
-    
+   
     try:
         with open(args.db, 'r') as f:
             while True:
@@ -40,11 +40,21 @@ def main():
     """Main function"""
     
     import argparse
+    import os
+    
+    
+  #  print os.path.dirname(os.path.abspath(__file__))
+  #  print os.path.realpath(__file__)
+  #  print os.path.abspath(__file__)
+  #  print os.path.basename(__file__)
+    
+#     print os.path.dirname(os.path.abspath(__file__)).join("/tagsDB")
+    
     parser = argparse.ArgumentParser(description='Query common tag database')
     parser.add_argument('--url', dest='url', help='return the tag associated with the URL')
     parser.add_argument('--app', dest='application',help='return the tag associated with the repository application name')
     parser.add_argument('--tag', dest='tag',help='return the repository application name associated with the tag')
-    parser.add_argument('--db', dest='db', default="tagsDB", help='database file to use (defaults to tagsDB in the current directory)')
+    parser.add_argument('--db', dest='db', default=os.path.dirname(os.path.abspath(__file__)) + "/tagsDB", help='defaults to tagsDB in the same directory as this file)')
     
     read_file(parser.parse_args())
     
