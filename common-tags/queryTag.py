@@ -44,7 +44,7 @@ def main():
     parser.add_argument('--url', dest='url', help='return the tag associated with the URL')
     parser.add_argument('--app', dest='application',help='return the tag associated with the repository application name')
     parser.add_argument('--tag', dest='tag',help='return the repository application name associated with the tag')
-    parser.add_argument('--db', dest='db', default="tagsDB", help='database file to use')
+    parser.add_argument('--db', dest='db', default="tagsDB", help='database file to use (defaults to tagsDB in the current directory)')
     
     read_file(parser.parse_args())
     
