@@ -3,4 +3,5 @@
 This directory serves as a single place to put commonly used files, utilties, etc.
 
 [common-tags](https://github.com/Datanexus/common-utils/tree/master/common-tags) - query the common tags database for application tags 
+
 [inventory](https://github.com/Datanexus/common-utils/tree/master/inventory) - dynamic inventory scripts for various environments
