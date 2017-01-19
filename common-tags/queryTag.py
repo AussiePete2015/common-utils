@@ -40,7 +40,7 @@ def main():
     """Main function"""
     
     import argparse
-    parser = argparse.ArgumentParser(description='Install DN Platform')
+    parser = argparse.ArgumentParser(description='Query common tag database')
     parser.add_argument('--url', dest='url', help='return the tag associated with the URL')
     parser.add_argument('--app', dest='application',help='return the tag associated with the repository application name')
     parser.add_argument('--tag', dest='tag',help='return the repository application name associated with the tag')
