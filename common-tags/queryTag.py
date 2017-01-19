@@ -13,9 +13,10 @@ def match_tags (line, args):
     app_tag=line.split(',')[1].lstrip()
     app_tag = app_tag[app_tag.find(':')+1:]
     
-    if args.url == app_repo: return (app_tag)
-    if args.application == app_name: return (app_tag)
-    if args.tag == app_tag: return (app_name)
+    if str(args.url).lower() == str(app_repo).lower(): return (app_tag)
+    if str(args.application).lower() == app_name.lower(): return (app_tag)
+    if str(args.tag).lower() == app_tag.lower(): return (app_name)
+    
     return None
     
 def read_file (args):
@@ -33,7 +34,7 @@ def read_file (args):
                     result = match_tags(app_line, args)
                     if result is not None: print result
     except IOError:
-        print "'%s' not found...exiting" % args.db
+        print "'database %s' not found...exiting" % args.db
         sys.exit(1)
     
 def main():
@@ -41,20 +42,14 @@ def main():
     
     import argparse
     import os
-    
-    
-  #  print os.path.dirname(os.path.abspath(__file__))
-  #  print os.path.realpath(__file__)
-  #  print os.path.abspath(__file__)
-  #  print os.path.basename(__file__)
-    
+        
 #     print os.path.dirname(os.path.abspath(__file__)).join("/tagsDB")
     
     parser = argparse.ArgumentParser(description='Query common tag database')
     parser.add_argument('--url', dest='url', help='return the tag associated with the URL')
     parser.add_argument('--app', dest='application',help='return the tag associated with the repository application name')
     parser.add_argument('--tag', dest='tag',help='return the repository application name associated with the tag')
-    parser.add_argument('--db', dest='db', default=os.path.dirname(os.path.abspath(__file__)) + "/tagsDB", help='defaults to tagsDB in the same directory as this file)')
+    parser.add_argument('--db', dest='db', default=os.path.dirname(os.path.abspath(__file__)) + "/tagsDB", help='defaults to: %s' % os.path.dirname(os.path.abspath(__file__))+ "/tagsDB")
     
     read_file(parser.parse_args())
     
