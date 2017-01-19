@@ -1,0 +1,7 @@
+# (c) 2016 DataNexus Inc.  All Rights Reserved.
+repo:https://github.com/Datanexus/dn-postgresql, application:postgresql
+repo:https://github.com/Datanexus/dn-solr, application:solr
+repo:https://github.com/Datanexus/dn-influxdb, application:influxdb
+repo:https://github.com/Datanexus/dn-telegraf, application:telegraf 
+repo:https://github.com/Datanexus/dn-kafka, application:kafka
+repo:https://github.com/Datanexus/dn-cassandra, application:cassandra
