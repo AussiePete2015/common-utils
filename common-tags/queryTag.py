@@ -3,7 +3,6 @@
 __copyright__ = '(c) 2016 DataNexus Inc.  All Rights Reserved.'
 __license__ = 'APLv2.0'
 __author__ = 'ckeller@datanexus.org'
-__version__ = '0.1'
 
 def match_tags (line, args):
     
