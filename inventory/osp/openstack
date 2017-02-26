@@ -1,0 +1,2 @@
+#!/bin/sh
+common-utils/inventory/osp/openstack.py --list
